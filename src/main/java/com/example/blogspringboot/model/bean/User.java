@@ -13,4 +13,6 @@ public class User {
 
     private String privilege;
 
+    private String isDelete;
+
 }

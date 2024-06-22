@@ -46,13 +46,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         // 创建UserDetails对象并设置用户名、密码和权限
         UserDetails userDetails = new org.springframework.security.core.userdetails.User(
                 user.getUsername(), user.getPassword(), authorities);
-
         return userDetails;
     }
 
     @Override
     public ResponseEntity<?> userLogin(String userName, String password) {
-
         UserDetails userDetails = loadUserByUsername(userName);
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         if (userName != null && !userName.isEmpty() && password != null && !password.isEmpty()){
