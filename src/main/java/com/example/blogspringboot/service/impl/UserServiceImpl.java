@@ -71,4 +71,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         // 检查密码是否匹配
 
     }
+
+
+    @Override
+    public User getUser(int id){
+        return userMapper.selectById(id);
+    }
 }

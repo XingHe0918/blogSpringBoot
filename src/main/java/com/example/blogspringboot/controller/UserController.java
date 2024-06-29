@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -21,5 +21,6 @@ public class UserController {
     public ResponseEntity<?> userLogin(@RequestBody User loginUser)  {
         return userService.userLogin(loginUser.getUsername(), loginUser.getPassword());
     }
+
 
 }
